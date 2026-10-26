@@ -1,0 +1,97 @@
+﻿<Application x:Class="TabExample.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:TabExample"
+             StartupUri="Views/MainWindow.xaml">
+    <Application.Resources>
+
+        <Style x:Key="ModernDataGrid"
+       TargetType="{x:Type DataGrid}">
+
+            <!-- Overall table appearance -->
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Foreground" Value="#334155"/>
+            <Setter Property="BorderBrush" Value="#E2E8F0"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="GridLinesVisibility" Value="None"/>
+            <Setter Property="HeadersVisibility" Value="Column"/>
+
+            <!-- Row settings -->
+            <Setter Property="RowBackground" Value="White"/>
+            <Setter Property="AlternatingRowBackground" Value="#F8FAFC"/>
+            <Setter Property="AlternationCount" Value="2"/>
+            <Setter Property="RowHeight" Value="42"/>
+            <Setter Property="ColumnHeaderHeight" Value="44"/>
+
+            <!-- Behavior -->
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="CanUserAddRows" Value="False"/>
+            <Setter Property="CanUserResizeRows" Value="False"/>
+            <Setter Property="IsReadOnly" Value="True"/>
+            <Setter Property="SelectionMode" Value="Single"/>
+            <Setter Property="SelectionUnit" Value="FullRow"/>
+            <Setter Property="AutoGenerateColumns" Value="True"/>
+
+            <!-- Column header appearance -->
+            <Setter Property="ColumnHeaderStyle">
+                <Setter.Value>
+                    <Style TargetType="{x:Type DataGridColumnHeader}">
+                        <Setter Property="Background" Value="#2457A7"/>
+                        <Setter Property="Foreground" Value="White"/>
+                        <Setter Property="FontWeight" Value="SemiBold"/>
+                        <Setter Property="Padding" Value="8,6"/>
+                        <Setter Property="BorderThickness" Value="0"/>
+                        <Setter Property="HorizontalContentAlignment"
+                        Value="Center"/>
+                        <Setter Property="VerticalContentAlignment"
+                        Value="Center"/>
+                    </Style>
+                </Setter.Value>
+            </Setter>
+
+            <!-- Cell appearance and alignment -->
+            <Setter Property="CellStyle">
+                <Setter.Value>
+                    <Style TargetType="{x:Type DataGridCell}">
+                        <Setter Property="Padding" Value="8,4"/>
+                        <Setter Property="BorderThickness" Value="0"/>
+                        <Setter Property="HorizontalContentAlignment"
+                        Value="Stretch"/>
+                        <Setter Property="VerticalContentAlignment"
+                        Value="Center"/>
+                        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+
+                        <Style.Triggers>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter Property="Background" Value="#DBEAFE"/>
+                                <Setter Property="Foreground" Value="#1D4ED8"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Setter.Value>
+            </Setter>
+
+            <!-- Row hover and selection -->
+            <Setter Property="RowStyle">
+                <Setter.Value>
+                    <Style TargetType="{x:Type DataGridRow}">
+                        <Setter Property="SnapsToDevicePixels" Value="True"/>
+
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#EFF6FF"/>
+                            </Trigger>
+
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter Property="Background" Value="#DBEAFE"/>
+                                <Setter Property="Foreground" Value="#1D4ED8"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Setter.Value>
+            </Setter>
+
+        </Style>
+
+    </Application.Resources>
+</Application>
